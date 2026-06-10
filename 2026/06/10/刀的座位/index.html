@@ -190,7 +190,7 @@
             
             <span class="tag">
                 
-                <a href="/comet/tags/边狱巴士" style=color:#00a596>
+                <a href="/comet/tags/边狱巴士" style=color:#ffa2c4>
                     边狱巴士
                 </a>
             </span>
@@ -296,7 +296,8 @@
         admin: ['tecalion'],
         language: 'zh-CN',
         id: location.pathname,      // Ensure uniqueness and length less than 50
-        distractionFreeMode: true  // Facebook-like distraction free mode
+        distractionFreeMode: true,  // Facebook-like distraction free mode
+        proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
     })
     gitalk.render('gitalk-container')
 </script>
