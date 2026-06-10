@@ -168,62 +168,177 @@
                      
 <div class="categories-tags">
     <div class="search-container">
-        <a-input 
+        <input 
+            type="text" 
             placeholder="搜索标签..." 
-            v-model="searchKeyword"
-            :prefix-icon="searchIcon"
             class="search-input"
+            id="tagSearchInput"
         />
-    </div>
-    
-    <div class="all-s">
-        
-        
-        
-        <span>
-            <a href="/comet/tags/边狱巴士/" style="background:#ff7d73; font-size: 28px;">
-                <span class="icon">
-                    <a-icon type="tag" theme="filled" />
-                </span>
-                边狱巴士
-                <span class="count">2</span>
-            </a>
+        <span class="search-icon">
+            <a-icon type="search" theme="filled" />
         </span>
-        
-        
     </div>
     
-    <div v-if="is_tag_selected" id="archives">
-        <div class="tag-title">
-            <a-icon type="tag" theme="filled" />
-            <span>标签: </span>
-            <span class="post-count">共 0 篇文章</span>
+    <div class="tag-filter-section">
+        <div class="tag-filter-header">
+            <a-icon type="tags" theme="filled" />
+            <span>所有标签</span>
+        </div>
+        <div class="tag-filter-chips">
+            <span 
+                class="filter-chip active" 
+                data-tag=""
+            >
+                全部
+            </span>
+            
+            <span 
+                class="filter-chip" 
+                data-tag="边狱巴士"
+            >
+                边狱巴士
+                <span class="chip-count">(2)</span>
+            </span>
+            
+        </div>
+    </div>
+    
+    <div class="tag-posts-section">
+        <div id="tagHeader" class="tag-header">
+            <div class="tag-badge">
+                <a-icon type="tag" theme="filled" />
+                <span id="selectedTagName">全部文章</span>
+            </div>
+            <span class="tag-post-count" id="selectedTagCount">共 0 篇文章</span>
         </div>
         
+        <div id="tagPostsList">
+            
+            
+            <div class="post-card" data-tag="边狱巴士">
+                <div class="post-card-inner">
+                    <div class="post-date">2026/6/10</div>
+                    <a href="/comet/2026/06/10/刀的座位/" class="post-title">
+                        <h3>刀的座位</h3>
+                    </a>
+                    <div class="post-tags">
+                        
+                        
+                        <span class="post-tag">
+                            <a href="/comet/tags/边狱巴士">
+                                <span class="tag-icon">
+                                    <a-icon type="tag" theme="filled" />
+                                </span>
+                                <span class="tag-text">边狱巴士</span>
+                            </a>
+                        </span>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-card" data-tag="边狱巴士">
+                <div class="post-card-inner">
+                    <div class="post-date">2026/6/9</div>
+                    <a href="/comet/2026/06/09/藤蔓/" class="post-title">
+                        <h3>藤蔓</h3>
+                    </a>
+                    <div class="post-tags">
+                        
+                        
+                        <span class="post-tag">
+                            <a href="/comet/tags/边狱巴士">
+                                <span class="tag-icon">
+                                    <a-icon type="tag" theme="filled" />
+                                </span>
+                                <span class="tag-text">边狱巴士</span>
+                            </a>
+                        </span>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+        
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <a-icon type="file-text" theme="filled" />
+            <p>暂无相关文章</p>
+        </div>
     </div>
     
     <script>
-        new Vue({
-            el: '.categories-tags',
-            data: {
-                searchKeyword: '',
-                is_tag_selected: false,
-                searchIcon: 'search'
-            },
-            watch: {
-                searchKeyword: function(val) {
-                    var tags = document.querySelectorAll('.all-s span');
-                    tags.forEach(function(tag) {
-                        var tagName = tag.textContent.toLowerCase();
-                        if (val === '' || tagName.includes(val.toLowerCase())) {
-                            tag.style.display = 'inline-block';
-                        } else {
-                            tag.style.display = 'none';
-                        }
-                    });
+        document.addEventListener('DOMContentLoaded', function() {
+            var selectedTag = '';
+            
+            
+            
+            var chips = document.querySelectorAll('.filter-chip');
+            var cards = document.querySelectorAll('.post-card');
+            var tagHeader = document.getElementById('tagHeader');
+            var tagName = document.getElementById('selectedTagName');
+            var tagCount = document.getElementById('selectedTagCount');
+            var tagPostsList = document.getElementById('tagPostsList');
+            var emptyState = document.getElementById('emptyState');
+            var searchInput = document.getElementById('tagSearchInput');
+            
+            function updateFilter() {
+                var searchVal = searchInput.value.toLowerCase();
+                var visibleCount = 0;
+                
+                cards.forEach(function(card) {
+                    var cardTag = card.getAttribute('data-tag');
+                    var showCard = (!selectedTag || cardTag === selectedTag);
+                    
+                    if (searchVal) {
+                        showCard = showCard && cardTag.toLowerCase().includes(searchVal);
+                    }
+                    
+                    card.style.display = showCard ? 'block' : 'none';
+                    if (showCard) visibleCount++;
+                });
+                
+                chips.forEach(function(chip) {
+                    var chipTag = chip.getAttribute('data-tag');
+                    var showChip = !searchVal || chipTag.toLowerCase().includes(searchVal) || chipTag === '';
+                    chip.style.display = showChip ? 'inline-block' : 'none';
+                });
+                
+                chips.forEach(function(chip) {
+                    chip.classList.remove('active');
+                    if (chip.getAttribute('data-tag') === selectedTag) {
+                        chip.classList.add('active');
+                    }
+                });
+                
+                if (selectedTag) {
+                    tagName.textContent = selectedTag;
+                } else {
+                    tagName.textContent = '全部文章';
                 }
+                tagCount.textContent = '共 ' + visibleCount + ' 篇文章';
+                tagHeader.style.display = 'flex';
+                
+                emptyState.style.display = visibleCount === 0 ? 'flex' : 'none';
+                tagPostsList.style.display = visibleCount > 0 ? 'block' : 'none';
             }
-        })
+            
+            chips.forEach(function(chip) {
+                chip.addEventListener('click', function() {
+                    selectedTag = this.getAttribute('data-tag');
+                    updateFilter();
+                });
+            });
+            
+            searchInput.addEventListener('input', function() {
+                updateFilter();
+            });
+            
+            updateFilter();
+        });
     </script>
 </div>
                      

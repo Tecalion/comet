@@ -26,27 +26,27 @@
 #home-head .home-info .loop:nth-child(1) {
   border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
   background: #fff;
-  opacity: 0.3;
+  opacity: 0.12;
   transform: rotate(30deg);
   animation: loop1 10s linear infinite;
 }
 #home-head .home-info .loop:nth-child(2) {
   border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
   background: #fff;
-  opacity: 0.45;
+  opacity: 0.18;
   transform: rotate(60deg);
   animation: loop2 15s linear infinite;
 }
 #home-head .home-info .loop:nth-child(3) {
   border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
-  opacity: 0.3;
+  opacity: 0.12;
   background: #fff;
   transform: rotate(90deg);
   animation: loop3 10s linear infinite;
 }
 #home-head .home-info .loop:nth-child(4) {
   border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
-  opacity: 0.45;
+  opacity: 0.18;
   background: #fff;
   transform: rotate(120deg);
   animation: loop4 15s linear infinite;
