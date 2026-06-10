@@ -164,3 +164,53 @@
   padding: 30px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.08);
 }
+@media (max-width: 900px) {
+  .article h1 {
+    font-size: 1.6em;
+    margin: 15px 0 20px;
+  }
+  .article .info {
+    padding: 12px 20px;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .article .info .tag a {
+    padding: 4px 10px;
+    font-size: 0.8em;
+  }
+  .article .content {
+    padding: 20px;
+    line-height: 1.7;
+    border-radius: 12px;
+  }
+  .article .content p {
+    margin-bottom: 15px;
+    font-size: 1em;
+    text-indent: 1.5em;
+  }
+  .article .content h2 {
+    font-size: 1.3em;
+    margin: 20px 0 12px;
+    padding-bottom: 8px;
+  }
+  .article .content h3 {
+    font-size: 1.15em;
+    margin: 18px 0 10px;
+  }
+  .article .content blockquote {
+    padding: 10px 15px;
+    margin: 15px 0;
+  }
+  .article .content pre {
+    padding: 15px;
+    font-size: 0.8em;
+  }
+  .article .content ul,
+  .article .content ol {
+    padding-left: 20px;
+  }
+  .article #comment {
+    margin-top: 25px;
+    padding: 20px;
+  }
+}

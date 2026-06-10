@@ -148,8 +148,8 @@
     padding: 10px 20px;
   }
   #home-posts-wrap {
-    padding: 20px 0;
-    width: 95%;
+    padding: 15px 0;
+    width: 98%;
   }
   #home-card {
     display: none;
@@ -159,21 +159,24 @@
     width: 100%;
   }
   #home-posts .post {
-    padding: 20px 30px;
-    margin: 30px 0;
+    padding: 15px 20px;
+    margin: 20px 0;
   }
   #home-posts .post .excerpt {
-    padding: 20px 0;
+    padding: 15px 0;
   }
   .article {
-    width: 85%;
+    width: 96%;
+    padding: 10px;
+    font-size: 14px;
+    top: 80px;
   }
   .content .language {
-    right: 10%;
+    right: 5%;
   }
   #archives,
   .categories-tags {
-    width: 90%;
+    width: 96%;
   }
   footer .footer-wrap {
     width: 100%;
