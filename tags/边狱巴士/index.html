@@ -175,13 +175,13 @@
             id="tagSearchInput"
         />
         <span class="search-icon">
-            <a-icon type="search" theme="filled" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
         </span>
     </div>
     
     <div class="tag-filter-section">
         <div class="tag-filter-header">
-            <a-icon type="tags" theme="filled" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
             <span>所有标签</span>
         </div>
         <div class="tag-filter-chips">
@@ -206,7 +206,7 @@
     <div class="tag-posts-section">
         <div id="tagHeader" class="tag-header">
             <div class="tag-badge">
-                <a-icon type="tag" theme="filled" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
                 <span id="selectedTagName">全部文章</span>
             </div>
             <span class="tag-post-count" id="selectedTagCount">共 0 篇文章</span>
@@ -227,7 +227,7 @@
                         <span class="post-tag">
                             <a href="/comet/tags/边狱巴士">
                                 <span class="tag-icon">
-                                    <a-icon type="tag" theme="filled" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
                                 </span>
                                 <span class="tag-text">边狱巴士</span>
                             </a>
@@ -250,7 +250,7 @@
                         <span class="post-tag">
                             <a href="/comet/tags/边狱巴士">
                                 <span class="tag-icon">
-                                    <a-icon type="tag" theme="filled" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
                                 </span>
                                 <span class="tag-text">边狱巴士</span>
                             </a>
@@ -265,18 +265,14 @@
         </div>
         
         <div id="emptyState" class="empty-state" style="display: none;">
-            <a-icon type="file-text" theme="filled" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
             <p>暂无相关文章</p>
         </div>
     </div>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var selectedTag = '';
-            
-            
-            selectedTag = '边狱巴士';
-            
+            var selectedTag = '边狱巴士';
             
             var chips = document.querySelectorAll('.filter-chip');
             var cards = document.querySelectorAll('.post-card');
