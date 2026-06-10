@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="cn ">
+<html lang="zh ">
 
 <head>
     <meta charset="UTF-8">
@@ -167,22 +167,38 @@
                 <div id="main">
                      
 <div class="categories-tags">
+    <div class="search-container">
+        <a-input 
+            placeholder="搜索标签..." 
+            v-model="searchKeyword"
+            :prefix-icon="searchIcon"
+            class="search-input"
+        />
+    </div>
     
     <div class="all-s">
         
         
+        
         <span>
-            <a href="/comet/tags/边狱巴士/" style='background:linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)'>
+            <a href="/comet/tags/边狱巴士/" style="'background:linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)'; font-size: 28px;">
                 <span class="icon">
                     <a-icon type="tag" theme="filled" />
                 </span>
                 边狱巴士
+                <span class="count">1</span>
             </a>
         </span>
         
         
     </div>
-    <div id="archives">
+    
+    <div v-if="is_tag_selected" id="archives">
+        <div class="tag-title">
+            <a-icon type="tag" theme="filled" />
+            <span>标签: 边狱巴士</span>
+            <span class="post-count">共 1 篇文章</span>
+        </div>
         
         <a-timeline>
             <a-timeline-item color="#a5c2f5">
@@ -202,7 +218,7 @@
                             
                             <span class="tag">
                                 
-                                <a href="/comet/tags/边狱巴士" style=color:#00bcd4>
+                                <a href="/comet/tags/边狱巴士" style=color:#00a596>
                                     边狱巴士
                                 </a>
                             </span>
@@ -215,9 +231,28 @@
         </a-timeline>
         
     </div>
+    
     <script>
         new Vue({
-            el: '#archives'
+            el: '.categories-tags',
+            data: {
+                searchKeyword: '',
+                is_tag_selected: true,
+                searchIcon: 'search'
+            },
+            watch: {
+                searchKeyword: function(val) {
+                    var tags = document.querySelectorAll('.all-s span');
+                    tags.forEach(function(tag) {
+                        var tagName = tag.textContent.toLowerCase();
+                        if (val === '' || tagName.includes(val.toLowerCase())) {
+                            tag.style.display = 'inline-block';
+                        } else {
+                            tag.style.display = 'none';
+                        }
+                    });
+                }
+            }
         })
     </script>
 </div>

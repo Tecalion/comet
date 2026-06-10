@@ -2,38 +2,121 @@
   position: relative;
   top: 100px;
   margin: auto;
+  padding: 20px;
+}
+.categories-tags .search-container {
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+.categories-tags .search-input {
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 .categories-tags .all-s {
   text-align: center;
   max-width: 900px;
   width: 90%;
   margin: auto;
+  margin-bottom: 30px;
 }
 .categories-tags .all-s span {
   display: inline-block;
-  margin: 10px;
+  margin: 8px;
+  transition: all 0.3s ease;
+}
+.categories-tags .all-s span:hover {
+  transform: translateY(-3px);
 }
 .categories-tags .all-s span a {
-  padding: 10px 15px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
   color: #fff;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 25px;
   transition: all 0.5s;
   border: rgba(255,255,255,0.502) 1px solid;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 .categories-tags .all-s span a:hover {
   border: #a5c2f5 1px solid;
   background: #fff !important;
   color: label-font;
+  opacity: 0.9;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 .categories-tags .all-s span a:hover .icon {
   color: label-font;
 }
 .categories-tags .all-s span .icon {
   margin-left: 0;
-  margin-right: 10px;
+  margin-right: 5px;
   color: #fff;
+  font-size: 0.8em;
+}
+.categories-tags .all-s span .count {
+  margin-left: 8px;
+  background: rgba(255,255,255,0.3);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.7em;
 }
 .categories-tags #archives {
   top: 60px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.categories-tags #archives .tag-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.2em;
+}
+.categories-tags #archives .tag-title .anticon {
+  margin-right: 10px;
+}
+.categories-tags #archives .tag-title .post-count {
+  margin-left: 15px;
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+.categories-tags .tags {
+  margin-top: 10px;
+}
+.categories-tags .tags .icon {
+  margin-right: 5px;
+}
+.categories-tags .tags .tag {
+  margin-right: 8px;
+}
+.categories-tags .tags .tag a {
+  padding: 3px 8px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.85em;
+}
+.categories-tags .item-time {
+  color: #999;
+  font-size: 0.9em;
+  margin-bottom: 8px;
+}
+.categories-tags .category {
+  margin-right: 15px;
+}
+.categories-tags .category a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #666;
+  font-size: 0.9em;
+}
+.categories-tags .category a .icon {
+  margin-right: 3px;
 }
