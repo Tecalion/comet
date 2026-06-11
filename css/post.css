@@ -163,6 +163,31 @@
   border-radius: 20px;
   padding: 30px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  border: 1px solid rgba(154,187,247,0.15);
+}
+.article #comment #cusdis_thread {
+  max-height: none !important;
+  overflow-y: visible !important;
+}
+.article #comment #cusdis_thread .cusdis {
+  max-height: none !important;
+  overflow-y: visible !important;
+}
+.article #comment #cusdis_thread .cusdis .cusdis-comments {
+  max-height: none !important;
+  overflow-y: visible !important;
+}
+.article #comment #cusdis_thread .cusdis .cusdis-form {
+  max-height: none !important;
+  overflow-y: visible !important;
+}
+.article #comment #cusdis_thread .cusdis .cusdis-input {
+  max-height: none !important;
+  overflow-y: visible !important;
+}
+.article #comment #cusdis_thread .cusdis textarea {
+  max-height: none !important;
+  overflow-y: visible !important;
 }
 @media (max-width: 900px) {
   .article h1 {
@@ -212,5 +237,111 @@
   .article #comment {
     margin-top: 25px;
     padding: 20px;
+  }
+  .simple-comment .comment-title {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(154,187,247,0.3);
+  }
+  .simple-comment #comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  .simple-comment #comment-form #comment-nickname {
+    padding: 12px 16px;
+    border: 1px solid rgba(154,187,247,0.3);
+    border-radius: 10px;
+    font-size: 14px;
+    background: rgba(154,187,247,0.05);
+    transition: all 0.3s ease;
+  }
+  .simple-comment #comment-form #comment-nickname:focus {
+    outline: none;
+    border-color: #9abbf7;
+    box-shadow: 0 0 0 3px rgba(154,187,247,0.2);
+  }
+  .simple-comment #comment-form #comment-content {
+    padding: 15px 16px;
+    border: 1px solid rgba(154,187,247,0.3);
+    border-radius: 12px;
+    font-size: 14px;
+    min-height: 100px;
+    resize: none;
+    background: rgba(154,187,247,0.05);
+    transition: all 0.3s ease;
+  }
+  .simple-comment #comment-form #comment-content:focus {
+    outline: none;
+    border-color: #9abbf7;
+    box-shadow: 0 0 0 3px rgba(154,187,247,0.2);
+  }
+  .simple-comment #comment-form .comment-submit {
+    align-self: flex-end;
+    padding: 10px 25px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .simple-comment #comment-form .comment-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102,126,234,0.4);
+  }
+  .simple-comment #comments-list .no-comments {
+    text-align: center;
+    color: #999;
+    padding: 30px;
+    font-size: 14px;
+  }
+  .simple-comment #comments-list .comment-item {
+    background: rgba(154,187,247,0.05);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(154,187,247,0.15);
+  }
+  .simple-comment #comments-list .comment-item .comment-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .simple-comment #comments-list .comment-item .comment-header .comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #9abbf7, #ffbbf4);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .simple-comment #comments-list .comment-item .comment-header .comment-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .simple-comment #comments-list .comment-item .comment-header .comment-info .comment-nickname {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+  }
+  .simple-comment #comments-list .comment-item .comment-header .comment-info .comment-time {
+    font-size: 12px;
+    color: #999;
+  }
+  .simple-comment #comments-list .comment-item .comment-content {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
   }
 }
